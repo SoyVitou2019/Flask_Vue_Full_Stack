@@ -53,6 +53,7 @@
                                         </div>
                                     </div>
                                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Materials</a>
+                                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Graphs</a>
                                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">About</a>
                                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Contact</a>
                                 </div>
@@ -86,50 +87,50 @@
         </div>
 
         <!-- Text between webpack -->
-        <div class="bg-green-100 w-auto h-72 flex justify-center">
+        <div class="bg-green-100 w-auto h-56 flex justify-center sm:h-96">
            <div class="flex flex-col text-center justify-center space-y-7">
-                <logo class=" text-sm sm:text-4xl md:text-lg lg:text-5xl">E-Learning Club's Pro Vitou</logo>
+                <logo class=" text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">E-Learning Club's Pro Vitou</logo>
                 <div class="flex flex-col">
-                    <logo class=" text-sm sm:text-base md:text-lg lg:text-2xl">Click on the Images below to View My Crushs !</logo>
-                    <logo class=" text-sm sm:text-base md:text-lg lg:text-2xl">The journey of a thousand miles begins with a single step. As like As me love you.</logo>
+                    <logo class=" text-sm sm:text-xl md:text-2xl lg:text-3xl">Click on the Images below to View My Crushs !</logo>
+                    <logo class=" text-sm sm:text-xl md:text-2xl lg:text-3xl">The journey of a thousand miles begins with a single step. As like As me love you.</logo>
                 </div>
            </div>
         </div>
 
-        <div class="container_main">
-            <div class="container">
-                <div>
-                    <div class="box">
-                        
-                    </div>
-                    <div class="my-5 grid grid-rows-1">
+        <div class="bg-gray-800 text-white flex justify-center h-auto pt-10 md:h-96">
+            <div class="grid grid-cols-1 items-center md:items-center md:grid-cols-3 md:gap-14">
+
+                <div class="grid grid-cols-1  w-72 md:w-56">
+                    <div class=" w-72 h-52 md:w-56 md:h-44 bg-black" style="background: url(https://media.istockphoto.com/id/1407983911/photo/forex-diagrams-and-stock-market-rising-lines-with-numbers.jpg?b=1&s=170667a&w=0&k=20&c=HJCXFfwpkSC0XIHhIKoEaERF1TnN773k5NfLWTfryQs=); background-size: cover;"></div>
+                    <div class="my-5 grid grid-rows-1 m-auto">
                         <text>AIRLINE INDUSTRY</text>
                         <text1>CLICK TO LAUNCH</text1>
                     </div>
                 </div>
-                <div>
-                    <div class="box">
-                        
-                    </div>
-                    <div class="my-5 grid grid-rows-1">
+                <div class="grid grid-cols-1 w-72 md:w-56">
+                    <div class=" w-72 h-52 md:w-56 md:h-44 bg-black" style="background: url(https://d1.awsstatic.com/executive-insights/image-dont-overlook-cloud-a-strategic-tool-for-cfos-577-326.fa9217db42973b2f165e38ce05b21e3af62befae.jpg); background-size: cover;"></div>
+
+                    <div class="my-5 grid grid-rows-1 m-auto">
                         <text>AIRLINE INDUSTRY</text>
                         <text1>CLICK TO LAUNCH</text1>
                     </div>
                 </div>
-                <div>
-                    <div class="box">
-                        
-                    </div>
-                    <div class="my-5 grid grid-rows-1">
+                <div class="grid grid-cols-1 w-72 md:w-56">
+                    <div class=" w-72 h-52 md:w-56 md:h-44 bg-black" style="background: url(https://realestatemarket.com.mx/images/2021/09-septiembre/1409/Fibra_HD_informa_sobre_el__valor_financiero_razonable__por_fusin__.jpeg); background-size: cover;"></div>
+                    <div class="my-5 grid grid-rows-1 m-auto">
                         <text>AIRLINE INDUSTRY</text>
                         <text1>CLICK TO LAUNCH</text1>
                     </div>
-                </div>
+            </div>
+                
+                
             
             </div>
         </div>
 
-        <div></div>
+        <div>
+
+        </div>
     </div>
 </template>
 
