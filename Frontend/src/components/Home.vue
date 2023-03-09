@@ -56,6 +56,7 @@
                                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Graphs</a>
                                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">About</a>
                                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Contact</a>
+                                    <a href="" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium self-end">Login</a>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +64,7 @@
                 </div>
                 <!-- Mobile menu -->
                 <div class="sm:hidden bg-white" id="mobile-menu">
-                    <div class="px-2 pt-2 pb-3 space-y-1">
+                    <div class="hidden px-2 pt-2 pb-3 space-y-1">
                         <!-- Navigation links -->
                         <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md font-medium">Home</a>
                         <div class="relative">
@@ -129,49 +130,163 @@
         </div>
 
         <div>
-
+            <div class="bg-gray-400 py-10">
+                <div class="grid grid-cols-2 space-y-7   place-items-center pt-10 md:grid-cols-4 ">
+                    <div class=" space-y-6">
+                        <h3 class=" text-xl font-bold">Explore Zap1</h3>
+                        <ul class=" list-disc list-inside space-y-3">
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class=" space-y-6">
+                        <h3 class=" text-xl font-bold">Explore Zap2</h3>
+                        <ul class=" list-disc list-inside space-y-3">
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class=" space-y-6">
+                        <h3 class=" text-xl font-bold">Explore Zap3</h3>
+                        <ul class=" list-disc list-inside space-y-3">
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class=" space-y-6">
+                        <h3 class=" text-xl font-bold">Explore Zap4</h3>
+                        <ul class=" list-disc list-inside space-y-3">
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                            <li>
+                                <a>Measurements</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="mt-10">
+            </div>
         </div>
     </div>
 </template>
-
-<style scoped>
-template{
-    margin: 0;
-    padding: 0%;
-}
-
-.container{
-    display: flex;
-    display: grid;
-    margin: auto;
-    margin-top: 60px;
-    text-align: center;
-    justify-content: space-between;
-    width: 100vw;
-    height: 50vh;
-    grid-template-columns: 1fr 1fr 1fr;
-    background: url();
-}
-.box{
-    width: 250px;
-    height: 150px;
-    background: rgb(0, 0, 0);
-    border-radius: 7px;
-    margin: auto;
-}
-.box:hover{
-    background-color: rgba(0, 0, 0, 0.81);
-    cursor: pointer;
-}
-@media screen and (max-width: 900px){
-    .container{
-    grid-template-columns: 1fr 1fr;
-}
-}
-@media screen and (max-width: 500px){
-    .container{
-    grid-template-columns: 1fr ;
-}
-}
-
-</style>
