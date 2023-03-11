@@ -32,9 +32,11 @@ export default {
             let result = await axios.post("http://localhost:3000/user",data);
             // 201 meaning like previous login
             if(result.status == 201){
-                localStorage.setItem("infor-user", JSON.stringify(result.data));
+                localStorage.setItem("name", this.name);
+                localStorage.setItem("email", this.email);
+                localStorage.setItem("password", this.password);
                 // window.location.reload();
-                this.$router.push({name:"Home"})
+                // this.$router.push({name:"Home"})  
             }
         }
     },
