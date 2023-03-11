@@ -38,25 +38,16 @@
                             <div class="hidden sm:block sm:ml-6">
                                 <div class="flex space-x-4">
                                     <!-- Navigation links -->
-                                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Home</a>
+                                    <a v-on:click="route_home"  href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Home</a>
                                     <!-- button Category -->
-                                    <div class="relative">
-                                        <!-- Dropdown toggle button -->
-                                        <button type="button" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="menu-button" aria-expanded="false" aria-haspopup="true">
-                                            Category
-                                        </button>
-                                        <!-- Dropdown menu -->
-                                        <div class="hidden absolute z-50 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5" aria-labelledby="menu-button" role="menu">
-                                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Option 1</a>
-                                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Option 2</a>
-                                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Option 3</a>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Materials</a>
-                                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Graphs</a>
-                                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">About</a>
-                                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Contact</a>
+                                    <a v-on:click = "route_category" href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Categorys</a>
+                                    <a v-on:click = "route_material" href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Materials</a>
+                                    <a v-on:click = "route_tools" href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Tools</a>
+                                    <a v-on:click = "route_graph" href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Graphs</a>
+                                    <a v-on:click = "route_about" href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">About</a>
                                     <a href="" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium self-end">Login</a>
+                                    <a v-on:click = "route_sign_up" href="" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium self-end">Sign Up</a>
+                                    <a v-on:click="route_contact_us" href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium">Contact</a>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +72,7 @@
                         </div>
                         <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md font-medium">Materials</a>
                         <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md font-medium">About</a>
-                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md font-medium">Contact</a>
+                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md font-medium" >Contact</a>
                     </div>
                 </div>
             </nav>
@@ -102,14 +93,14 @@
             <div class="grid grid-cols-1 items-center md:items-center md:grid-cols-3 md:gap-14">
 
                 <div class="grid grid-cols-1  w-72 md:w-56">
-                    <div class=" w-72 h-52 md:w-56 md:h-44 bg-black" style="background: url(https://media.istockphoto.com/id/1407983911/photo/forex-diagrams-and-stock-market-rising-lines-with-numbers.jpg?b=1&s=170667a&w=0&k=20&c=HJCXFfwpkSC0XIHhIKoEaERF1TnN773k5NfLWTfryQs=); background-size: cover;"></div>
+                    <div class=" w-72 h-52 md:w-56 md:h-44 bg-black hover:scale-105 hover:drop-shadow-2xl" style="background: url(https://media.istockphoto.com/id/1407983911/photo/forex-diagrams-and-stock-market-rising-lines-with-numbers.jpg?b=1&s=170667a&w=0&k=20&c=HJCXFfwpkSC0XIHhIKoEaERF1TnN773k5NfLWTfryQs=); background-size: cover;"></div>
                     <div class="my-5 grid grid-rows-1 m-auto">
                         <text>AIRLINE INDUSTRY</text>
                         <text1>CLICK TO LAUNCH</text1>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 w-72 md:w-56">
-                    <div class=" w-72 h-52 md:w-56 md:h-44 bg-black" style="background: url(https://d1.awsstatic.com/executive-insights/image-dont-overlook-cloud-a-strategic-tool-for-cfos-577-326.fa9217db42973b2f165e38ce05b21e3af62befae.jpg); background-size: cover;"></div>
+                    <div class=" w-72 h-52 md:w-56 md:h-44 bg-black hover:scale-105 hover:drop-shadow-2xl" style="background: url(https://d1.awsstatic.com/executive-insights/image-dont-overlook-cloud-a-strategic-tool-for-cfos-577-326.fa9217db42973b2f165e38ce05b21e3af62befae.jpg); background-size: cover;"></div>
 
                     <div class="my-5 grid grid-rows-1 m-auto">
                         <text>AIRLINE INDUSTRY</text>
@@ -117,7 +108,7 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-1 w-72 md:w-56">
-                    <div class=" w-72 h-52 md:w-56 md:h-44 bg-black" style="background: url(https://realestatemarket.com.mx/images/2021/09-septiembre/1409/Fibra_HD_informa_sobre_el__valor_financiero_razonable__por_fusin__.jpeg); background-size: cover;"></div>
+                    <div class=" w-72 h-52 md:w-56 md:h-44 bg-black hover:scale-105 hover:drop-shadow-2xl" style="background: url(https://realestatemarket.com.mx/images/2021/09-septiembre/1409/Fibra_HD_informa_sobre_el__valor_financiero_razonable__por_fusin__.jpeg); background-size: cover;"></div>
                     <div class="my-5 grid grid-rows-1 m-auto">
                         <text>AIRLINE INDUSTRY</text>
                         <text1>CLICK TO LAUNCH</text1>
@@ -290,3 +281,45 @@
         </div>
     </div>
 </template>
+
+<script lang="ts">
+
+export default {
+    methods:{
+        route_contact_us (){
+            this.$router.push({name:"Contact_us"})
+        },
+        route_home (){
+            alert("Home page")
+            this.$router.push({name:"Home"})
+        },
+        route_category (){
+            this.$router.push({name:"Categorys"})
+        },
+        route_material (){
+            this.$router.push({name:"Materials"})
+        },
+        route_graph (){
+            this.$router.push({name:"Graphs"})
+        },
+        route_about (){
+            this.$router.push({name:"Abouts"})
+        },
+        route_login (){
+            this.$router.push({name:"contact_us"})
+        },
+        route_sign_up (){
+            this.$router.push({name:"SignUp"})
+        },
+        route_tools (){
+            this.$router.push({name:"Tools"})
+        },
+    },
+    mounted(){
+        let user = localStorage.getItem('infor-user');
+        if (!user){
+            this.$router.push({name:"SignUp"})
+        }
+    }
+}
+</script>

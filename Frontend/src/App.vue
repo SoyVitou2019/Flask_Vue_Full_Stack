@@ -1,28 +1,23 @@
 <template>
-  <div>
-    <Home />
-    <Contact_Us />
-    <login />
-  </div>
+  <router-view />
 </template>
 
 <script>
-import Home from "./components/Home.vue"
-import Contact_Us from "./components/Contact_us.vue"
-import login from "./components/login.vue"
+// import Home from "./components/Home.vue"
+// import SignUp from "./components/SignUp.vue"
 export default {
-  components:{
-      Home,
-      Contact_Us,
-      login
-    },
-  setup() {
-   
-    return {
-      Home,
-      Contact_Us,
-      login
-    }
-  },
+  name:'App',
+  // components:{
+  //   Home,
+  //   SignUp
+  // }
 }
 </script>
+
+
+<style scoped>
+template{
+  display: flex;
+  text-align: center;
+}
+</style>
