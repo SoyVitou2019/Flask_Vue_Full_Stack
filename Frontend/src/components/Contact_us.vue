@@ -21,6 +21,7 @@
                 <textarea id="message" rows="6" class="block p-3 w-72 text-sm text-black bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
             </div>
             <button type="submit" class=" py-4 px-5 text-sm font-medium text-center text-white bg-slate-400 hover:bg-slate-300 rounded-lg shadow-lg shadow-indigo-500/40">Send message</button>
+            <div class=" mb-60"></div>
         </form>
     </div>
   </section>

@@ -315,9 +315,17 @@ export default {
             this.$router.push({name:"Tools"})
         },
     },
+  
     mounted(){
-        let user = localStorage.getItem('infor-user');
-        if (!user){
+        if (localStorage.length == 0){
+            localStorage.setItem('name',"");
+            localStorage.setItem('email',"");
+            localStorage.setItem('password',"");
+        }
+        let name = localStorage.getItem('name');
+        let email = localStorage.getItem('email');
+        let pass = localStorage.getItem('password');
+        if (name == "" && email == "" && pass == ""){
             this.$router.push({name:"SignUp"})
         }
     }
