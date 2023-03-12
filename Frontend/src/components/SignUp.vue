@@ -14,9 +14,9 @@ import axios from "axios"
 export default {
     data(){
       return{
-        name:'',
-        email:'',
-        password:''
+        name:"",
+        email:"",
+        password:""
       }
     },
     methods:{
@@ -28,15 +28,22 @@ export default {
                 email:this.email,
                 password:this.password
             };
-
-            let result = await axios.post("http://localhost:3000/user",data);
-            // 201 meaning like previous login
-            if(result.status == 201){
-                localStorage.setItem("name", this.name);
-                localStorage.setItem("email", this.email);
-                localStorage.setItem("password", this.password);
-                // window.location.reload();
-                this.$router.push({name:"Home"})  
+            alert(data.name != "")
+            alert(data.email != "")
+            alert(data.password != "")
+            if(data.name != "" && data.email != "" && data.password != ""){  
+                
+                let result = await axios.post("http://localhost:3000/user",data);
+                alert(result)
+                // 201 meaning like previous login
+                if(result.status == 201){
+                    localStorage.setItem("name", this.name);
+                    localStorage.setItem("email", this.email);
+                    localStorage.setItem("password", this.password);
+                }
+             
+            
+                
             }
         }
     },
@@ -44,7 +51,7 @@ export default {
         let name = localStorage.getItem('name');
         let email = localStorage.getItem('email');
         let pass = localStorage.getItem('password');
-        if (name != "" && email != "" && pass != ""){
+        if (name != '' && email != '' && pass != ''){
             this.$router.push({name:"Home"})
         }
     }
