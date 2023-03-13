@@ -20,27 +20,20 @@ export default {
       }
     },
     methods:{
-        
-        async signUp(){
+        signUp(){
             // data as dictionary in javascript
             let data = {
                 name:this.name,
                 email:this.email,
                 password:this.password
             };
-            alert(data.name != "")
-            alert(data.email != "")
-            alert(data.password != "")
             if(data.name != "" && data.email != "" && data.password != ""){  
                 
-                let result = await axios.post("http://localhost:3000/user",data);
+                let result = axios.post("http://localhost:3000/user",data);
                 alert(result)
-                // 201 meaning like previous login
-                if(result.status == 201){
-                    localStorage.setItem("name", this.name);
-                    localStorage.setItem("email", this.email);
-                    localStorage.setItem("password", this.password);
-                }
+                localStorage.setItem("name", this.name);
+                localStorage.setItem("email", this.email);
+                localStorage.setItem("password", this.password);
              
             
                 
