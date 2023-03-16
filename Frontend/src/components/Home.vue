@@ -290,7 +290,6 @@ export default {
             this.$router.push({name:"Contact_us"})
         },
         route_home (){
-            alert("Home page")
             this.$router.push({name:"Home"})
         },
         route_category (){
@@ -312,6 +311,7 @@ export default {
             this.$router.push({name:"SignUp"})
         },
         route_tools (){
+            localStorage.setItem("numbers","1")
             this.$router.push({name:"Tools"})
         },
     },

@@ -2,13 +2,9 @@
   <div class="fixed">
     <div :class="`${display}`" class="right-2">
       <div class="bg-red-900 text-black mt-20 py-4">
-        <textarea
-          v-model="textinput"
-          id="message"
-          class="textarea my-12 mx-20 px-6 h-screen pt-4"
-          placeholder="Past your code here ..."
-        >
-        </textarea>
+        <textarea v-model="textinput" id="message" class="textarea my-12 mx-20 px-6 h-screen pt-4"
+          placeholder="Past your code here ...">
+          </textarea>
       </div>
     </div>
     <div class="container">
@@ -19,16 +15,11 @@
         </div>
         <div class="container_right_option_icon">
           <!-- comments -->
-          <i
-            :class="`${on_bar}`"
-            class="hover:bg-cyan-600 hover:rounded-lg hover:cursor-pointer"
-            v-on:click="load_bar_side"
-          ></i>
-          <i
-            class="fa-sharp fa-solid fa-circle-check hover:bg-cyan-600 hover:rounded-lg hover:cursor-pointer"
-            v-on:click="writeText()"
-          ></i>
-          <i class="fa-solid fa-microphone"></i>
+          <i :class="`${on_bar}`" class="hover:bg-cyan-600 hover:rounded-lg hover:cursor-pointer"
+            v-on:click="load_bar_side"></i>
+          <i class="fa-sharp fa-solid fa-circle-check hover:bg-cyan-600 hover:rounded-lg hover:cursor-pointer"
+            v-on:click="writeText()"></i>
+          <i v-on:click="reset()" class="fa-solid fa-rotate-left hover:bg-cyan-600 hover:rounded-lg hover:cursor-pointer"></i>
           <i class="fa-solid fa-location-crosshairs"></i>
           <i class="fa-solid fa-user" v-on:click="route_home"></i>
         </div>
@@ -51,16 +42,10 @@
             <div class="icon hovertext" data-hover="Search(Ctrl+Shift+F)">
               <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <div
-              class="icon hovertext"
-              data-hover="Source Control(Ctrl+Shift+G)"
-            >
+            <div class="icon hovertext" data-hover="Source Control(Ctrl+Shift+G)">
               <i class="fa-solid fa-code-branch"></i>
             </div>
-            <div
-              class="icon hovertext"
-              data-hover="Run and Debug (Ctrl+Shift+P)"
-            >
+            <div class="icon hovertext" data-hover="Run and Debug (Ctrl+Shift+P)">
               <i class="fa-solid fa-play"></i>
             </div>
             <div class="icon hovertext" data-hover="Slack (Ctrl+Shift+O)">
@@ -153,12 +138,17 @@ export default {
       on_bar: "fa-sharp fa-solid fa-toggle-off",
       display: "hidden",
       bool: false,
-      // color: "red",
+      div:false,
+      num : 0,
+      doublequote: false,
     };
   },
   methods: {
     route_home() {
       this.$router.push({ name: "Home" });
+    },
+    reset(){
+      window.location.reload();
     },
     load_bar_side() {
       this.bool = !this.bool;
@@ -173,44 +163,64 @@ export default {
     },
     writeText() {
       const textContainer = document.querySelector(".text-container p");
+      textContainer.innerHTML += `<span><br></span>`;
       let delay = 0;
-      let number = 0;
-      let countx = false;
-      let x = 0;
       const line = this.textinput;
+      let x = 0;
       for (let j = 0; j < line.length; j++) {
-        let temp = line.slice(j, j + 4);
         if (delay == 0) {
-          textContainer.innerHTML += `<span class = "text-red-400">${number}</span> , `;
+          this.num++;
+          textContainer.innerHTML += `<span class = "text-red-400">&nbsp;&nbsp;${this.num}</span> | `;
         }
         setTimeout(() => {
           // add a line break after each line except the last one
-          if (
-            temp.toLowerCase() === "<br>".toLowerCase() &&
-            j < line.length - 5
-          ) {
-            number++;
-            textContainer.innerHTML += temp;
-            textContainer.innerHTML += `<span class = "text-red-400">${number}</span> , `;
-            countx = true;
-          }
-          if (countx == false) {
-            if (line[j] != " ") {
-              textContainer.innerHTML += line[j];
-            } else {
-              textContainer.innerHTML += "&nbsp;";
+          if (line[j] == "\u000A") {
+            this.num++;
+            textContainer.innerHTML += `<span><br></span>`;
+            if(this.num < 10){
+              textContainer.innerHTML += `<span class = "text-red-400">&nbsp;&nbsp;${this.num}</span> | `;
+            }else{
+              textContainer.innerHTML += `<span class = "text-red-400">${this.num}</span> | `;
             }
           }
-          if (countx) {
-            x++;
-            if (x >= 4) {
+          if(j<line.length-3){
+            if(line.slice(j,j+3) == "div"){
               x = 0;
-              countx = false;
+              this.div = true;
             }
+            // check if it's inside of doubleqoute change text's color.
+            if(line[j]=="\""){
+              this.doublequote = !this.doublequote;
+            }
+          }
+          if (line[j] != " ") {
+              // change color of div tag
+              if(this.div){
+                x++;
+                textContainer.innerHTML += `<span class = "text-blue-600 font-bold">${line[j]}</span>`;
+                if(x>2){
+                  this.div = false;
+                }
+              }
+              // change color text inside of double qoute
+              else if(this.doublequote){
+                textContainer.innerHTML += `<span class = "text-orange-600">${line[j]}</span>`;
+                
+              }
+              // if it isn't our target display
+              else if(!this.div){
+                textContainer.innerHTML += line[j];
+              }
+
+          //  if it's space add space inner HTML text using entity ascii code 
+          } else {
+            textContainer.innerHTML += "&nbsp;";
           }
         }, delay);
+        // transition 1 text in 50 milliseconds
         delay += 50;
       }
+      
     },
   },
 };
@@ -380,6 +390,7 @@ export default {
   opacity: 1;
   visibility: visible;
 }
+
 /* HOVER TEXT 2  */
 .hovertext2 {
   position: relative;
@@ -464,9 +475,11 @@ export default {
   position: relative;
   border: 1px solid rgba(0, 38, 175, 0.038);
 }
+
 .explorer .container_file {
   display: block;
 }
+
 .explorer .container_file .file {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: medium;
@@ -474,16 +487,20 @@ export default {
   padding: 5px 15px;
   border: 1px solid rgba(0, 0, 0, 0.033);
 }
+
 .explorer .container_file .file1 .option {
   display: flex;
 }
+
 .explorer .container_file .file1 .option i {
   margin-left: 5px;
 }
+
 .explorer .container_file .file1 .option i:hover {
   color: #e28800;
   cursor: pointer;
 }
+
 .explorer .container_file .file1 {
   width: 14vw;
   border: 1px solid rgba(0, 0, 0, 0.033);
@@ -491,6 +508,7 @@ export default {
   display: flex;
   padding: 5px;
 }
+
 .explorer .container_file .file1 .folder_part {
   text-transform: uppercase;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -500,10 +518,12 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .explorer .container_file .file:hover {
   background-color: #00000008;
   cursor: pointer;
 }
+
 .container_part {
   display: flex;
   width: 100vw;
@@ -514,6 +534,7 @@ export default {
   padding-left: 23px;
   background-color: rgb(244, 244, 244);
 }
+
 .container_part .part {
   width: auto;
   height: auto;
@@ -526,17 +547,21 @@ export default {
   margin-left: 10px;
   padding: 0px;
 }
+
 .container_part .part i:hover {
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.111);
 }
+
 .container_part .part:hover {
   background-color: rgba(0, 0, 0, 0.032);
   cursor: pointer;
 }
+
 .container_part .part:active {
   background-color: rgba(0, 0, 0, 0.107);
 }
+
 .werning {
   display: none;
   margin: auto;
@@ -548,17 +573,21 @@ export default {
   margin-top: 50vh;
   transition: 1s ease-in-out;
 }
+
 @media screen and (max-width: 700px) {
   .container {
     display: none;
   }
+
   .footer {
     display: none;
   }
+
   .werning {
     display: block;
   }
 }
+
 #form {
   position: fixed;
   z-index: 10;
@@ -570,30 +599,35 @@ export default {
   float: right;
   display: none;
 }
+
 .textarea {
   width: 40vw;
 }
+
 @media screen and (max-width: 700px) {
   .textarea {
     display: none;
   }
 }
+
 .script5 {
   white-space: nowrap;
   width: 80.8vw;
   height: 82vh;
   padding-bottom: 82vh;
   overflow: scroll;
-  margin-top: 50px;
+  margin-top: 1px;
   text-align: left;
 }
-.script{
+
+.script {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  width:auto;
+  width: auto;
   height: auto;
 }
+
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -617,5 +651,4 @@ export default {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
   cursor: pointer;
-}
-</style>
+}</style>
